@@ -112,7 +112,6 @@
 
     .card-top {
       flex-grow: 1;
-      /* Takes up all the extra space */
     }
 
     .card-bottom {
@@ -147,7 +146,6 @@
       color: #0056b3;
     }
 
-    /* NEW MODALA STYLES */
     .modala {
       position: fixed;
       z-index: 1000;
@@ -516,7 +514,6 @@
     </div>
   </section>
 
-  <!-- MODAL -->
   <div class="modala" id="projectModal">
     <div class="modala-content">
       <div class="modala-header">
@@ -536,13 +533,8 @@
 
   <script>
     function openModal(title, tech, desc, githubUrl) {
-      // Set the title
       document.getElementById('modalTitle').textContent = title;
-
-      // Set the Tech Stack
       document.getElementById('modalTech').innerHTML = tech;
-
-      // Set the description as a list
       const descElement = document.getElementById('modalDesc');
       descElement.innerHTML = '';
       const points = desc.split('||');
@@ -558,7 +550,6 @@
         }
       });
 
-      // Handle GitHub Button
       const gitButton = document.getElementById('modalGit');
       if (githubUrl && githubUrl.trim() !== '') {
         gitButton.style.pointerEvents = 'auto';
@@ -567,14 +558,13 @@
         gitButton.textContent = 'View on GitHub';
         gitButton.target = '_blank';
       } else {
-        gitButton.style.pointerEvents = 'none'; // Disable click
+        gitButton.style.pointerEvents = 'none';
         gitButton.href = '#';
         gitButton.textContent = 'GitHub repository not available';
-        gitButton.style.color = '#999'; // optional gray styling
+        gitButton.style.color = '#999';
         gitButton.removeAttribute('target');
       }
 
-      // Show the modal
       document.getElementById('projectModal').style.display = 'flex';
     }
 

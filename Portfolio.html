@@ -328,7 +328,6 @@
             background: var(--project-bg);
             border-radius: 10px;
             padding: 18px 22px 56px 22px;
-            /* Increased bottom padding */
             flex: 0 1 260px;
             min-width: 260px;
             max-width: 300px;
@@ -369,7 +368,6 @@
             height: 100%;
             border: 1px solid #eee;
             --glow-color: #00bcd4;
-            /* Ensure it stretches equally */
         }
 
         .project-card:hover {
@@ -428,7 +426,6 @@
 
         .card-top {
             flex-grow: 1;
-            /* Takes up all the extra space */
         }
 
         .card-bottom {
@@ -636,11 +633,9 @@
             font-weight: 700;
             text-align: center;
             color: #00ffff;
-            /* Matching project section title color */
             margin-bottom: 3rem;
         }
 
-        /* Grid layout for education cards */
         .education-section .education-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -649,7 +644,6 @@
             margin: auto;
         }
 
-        /* Card styling */
         .education-section .education-card {
             background-color: #111111;
             border-radius: 1rem;
@@ -667,7 +661,6 @@
             box-shadow: 0 0 20px rgba(34, 35, 35, 0.47);
         }
 
-        /* Header text styles */
         .education-section .cards-header h3 {
             font-size: 1.2rem;
             font-weight: 700;
@@ -688,7 +681,6 @@
             font-weight: 500;
         }
 
-        /* Tag styling like skills in project cards */
         .education-section .cards-tags {
             display: flex;
             flex-wrap: wrap;
@@ -706,7 +698,6 @@
             user-select: none;
         }
 
-        /* Emoji margin */
         .education-section .emojis {
             margin-right: 0.5rem;
         }
@@ -977,7 +968,6 @@
         </div>
     </section>
 
-    <!-- MODAL -->
     <div class="modala" id="projectModal">
         <div class="modala-content">
             <div class="modala-header">
@@ -1089,13 +1079,8 @@
             }
         });
         function openModal(title, tech, desc, githubUrl) {
-            // Set the title
             document.getElementById('modalTitle').textContent = title;
-
-            // Set the Tech Stack
             document.getElementById('modalTech').innerHTML = tech;
-
-            // Set the description as a list
             const descElement = document.getElementById('modalDesc');
             descElement.innerHTML = '';
             const points = desc.split('||');
@@ -1105,7 +1090,6 @@
                 descElement.appendChild(li);
             });
 
-            // Handle GitHub Button
             const gitButton = document.getElementById('modalGit');
             if (githubUrl && githubUrl.trim() !== '') {
                 gitButton.style.pointerEvents = 'auto';
@@ -1114,18 +1098,15 @@
                 gitButton.textContent = 'View on GitHub';
                 gitButton.target = '_blank';
             } else {
-                gitButton.style.pointerEvents = 'none'; // Disable click
+                gitButton.style.pointerEvents = 'none';
                 gitButton.href = '#';
                 gitButton.textContent = 'GitHub repository not available';
-                gitButton.style.color = '#999'; // optional gray styling
+                gitButton.style.color = '#999';
                 gitButton.removeAttribute('target');
             }
 
-            // Show the modal
             document.getElementById('projectModal').style.display = 'flex';
         }
-
-
 
         function closeModal() {
             document.getElementById('projectModal').style.display = 'none';
