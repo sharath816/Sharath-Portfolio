@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sharath M Talawar, Software Developer, Frontend developer and Full-stack enthusiast.">
+    <meta name="description"
+        content="Sharath M Talawar, Software Developer, Frontend developer and Full-stack enthusiast.">
     <meta name="keywords" content="Sharath M Talawar, Portfolio">
     <meta name="author" content="Sharath M Talawar">
     <title>Sharath M Talawar | Portfolio</title>
@@ -65,7 +66,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            z-index: 800;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -246,7 +247,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             width: 100%;
             max-width: 1200px;
@@ -266,6 +267,17 @@
 
         .skill-card:hover {
             transform: translateY(-5px);
+        }
+
+        @media screen and (max-width: 600px) {
+            #skills {
+                padding: 2rem 1rem;
+            }
+
+            .skill-card {
+                font-size: 1rem;
+                padding: 1rem;
+            }
         }
 
 
@@ -316,15 +328,16 @@
         }
 
         /* Projects */
-        .projects-grid {
+        /* .projects-grid {
             display: flex;
-            flex-wrap: w0 1 260px;
             gap: 20px;
             margin-top: 10px;
-            justify-content: flex-start;
-        }
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
 
-        .project-card {
+        /* .project-card {
             background: var(--project-bg);
             border-radius: 10px;
             padding: 18px 22px 56px 22px;
@@ -333,46 +346,62 @@
             max-width: 300px;
             border: 1.5px solid var(--project-border);
             position: relative;
-        }
+            transform: translateZ(0);
+            transition: box-shadow 0.5s ease, transform 0.3s ease;
+            will-change: transform;
+        } */
 
         .highlight {
             color: #00ffff;
             font-weight: 600;
         }
 
-        /* Projects */
         .projects-section {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            padding: 2rem;
+            padding: 2rem 1rem;
             max-width: 1400px;
-            margin: auto;
+            margin: 0 auto;
+            overflow: visible;
+            justify-content: center;
         }
 
         @media screen and (max-width: 768px) {
             .projects-section {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                place-items: center;
             }
         }
 
         .project-card {
             background-color: #1a1a1a;
+            border: 1px solid #eee;
             border-radius: 14px;
             padding: 1.5rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            transition: box-shadow 0.5s ease, transform 0.3s ease;
-            cursor: pointer;
+            max-width: 320px;
+            min-width: 260px;
+            flex: 0 1 260px;
+            height: 100%;
+
             display: flex;
             flex-direction: column;
-            height: 100%;
-            border: 1px solid #eee;
+            cursor: pointer;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.5s ease, transform 0.3s ease;
+
+            transform: translateZ(0);
+            will-change: transform;
+            position: relative;
+
             --glow-color: #00bcd4;
         }
 
         .project-card:hover {
             box-shadow: 0 0 20px var(--glow-color);
-            transform: translateY(-5px);
+            transform: translateY(-15px);
             z-index: 10;
         }
 
@@ -657,8 +686,9 @@
         }
 
         .education-section .education-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 20px rgba(34, 35, 35, 0.47);
+            background-color: #222222;
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
         }
 
         .education-section .cards-header h3 {
@@ -876,7 +906,7 @@
     <section id="projects">
         <h2 class="section-title" data-aos="fade-up">💼 Projects</h2>
         <div class="projects-section">
-            <div class="project-card" data-aos="fade-up" onclick="openModal(
+            <div class="project-card" onclick="openModal(
                 '🔬PubMed Research Paper Fetcher',
                 'Python, Streamlit, Algorithms',
                 `Python CLI tool to fetch PubMed research papers via user-defined queries.|| 
@@ -897,7 +927,7 @@
                     <div class="click-more">Click for more</div>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" onclick="openModal(
+            <div class="project-card" onclick="openModal(
                 '📝 Medical Report Analyzer', 
                 'ReactJs, Google Gemini API, MySQL, Azure, AWS', 
                 `AI-driven application for analyzing medical reports and generating multilingual descriptions.||
@@ -921,7 +951,7 @@
                 </div>
             </div>
 
-            <div class="project-card" data-aos="fade-up" onclick="openModal(
+            <div class="project-card" onclick="openModal(
                 '📚 Rule Engine with AST', 
                 'HTML, CSS, JavaScript', 
                 `Created a rule checker that decides if a user meets certain conditions like age or salary.||
@@ -942,7 +972,7 @@
                     <div class="click-more">Click for more</div>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" onclick="openModal(
+            <div class="project-card" onclick="openModal(
                 '🌤️ Real-Time Weather Monitoring', 
                 'HTML, CSS, JavaScript, OpenWeatherAPI', 
                 `Built a web dashboard to show live weather updates using OpenWeatherAPI.||
@@ -987,39 +1017,41 @@
     <section id="education" class="education-section">
         <h2 class="section-title" data-aos="fade-up">Education</h2>
         <div class="education-cards">
-            <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="education-card">
                 <div class="cards-header" data-aos="fade-up">
-                    <h3><span class="emojis" data-aos="fade-up">📘</span> 10th</h3>
+                    <h3><span class="emojis">📘</span> 10th</h3>
                 </div>
-                <p class="college-name" data-aos="fade-up">Excellent English Medium High School</p>
+                <p class="college-name">Excellent English Medium High School</p>
                 <div class="cards-tags">
                     <span>2018 - 2019</span>
                     <span>Percentage : 93.12%</span>
                 </div>
             </div>
-            <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="education-card">
                 <div class="cards-header" data-aos="fade-up">
-                    <h3><span class="emojis" data-aos="fade-up">🏫</span> PUC (12th)</h3>
+                    <h3><span class="emojis">🏫</span> PUC (12th)</h3>
                 </div>
-                <p class="college-name" data-aos="fade-up">Vidhya P Hanchinmani P U Science College</p>
+                <p class="college-name">Vidhya P Hanchinmani P U Science College</p>
                 <div class="cards-tags">
                     <span>2019 - 2021</span>
                     <span>Percentage : 90%</span>
                 </div>
             </div>
-            <div class="education-card" data-aos="fade-up">
+
+            <div class="education-card">
                 <div class="cards-header" data-aos="fade-up">
-                    <h3><span class="emojis" data-aos="fade-up">🎓</span> Bachelor of CSE</h3>
+                    <h3><span class="emojis">🎓</span> Bachelor of CSE</h3>
                 </div>
-                <p class="college-name" data-aos="fade-up">Acharya Institute of Technology</p>
+                <p class="college-name">Acharya Institute of Technology</p>
                 <div class="cards-tags">
                     <span>2021 - 2025</span>
                     <span>CGPA : 8.59</span>
                 </div>
             </div>
-
-
+        </div> 
     </section>
+
 
     <footer>
         <h2 id="contact" class="section-title" data-aos="fade-up">Contact Me</h2>
